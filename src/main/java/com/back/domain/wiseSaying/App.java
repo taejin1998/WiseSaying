@@ -8,9 +8,8 @@ import java.util.Scanner;
 public class App {
 
     private Scanner sc = new Scanner(System.in);
-
     private SystemController systemController = new SystemController();
-    private WiseSayingController wiseSayingController = new WiseSayingController(sc);
+    private WiseSayingController wiseSayingController = new WiseSayingController();
 
     public void run() {
 

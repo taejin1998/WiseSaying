@@ -1,4 +1,4 @@
-package com.back.domain.wiseSaying;
+package com.back.domain.wiseSaying.entity;
 
 public class WiseSaying {
 

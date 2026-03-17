@@ -20,6 +20,8 @@ public class WiseSayingService {
     public void modify(WiseSaying wiseSaying, String content, String author) {
         wiseSaying.setContent(content);
         wiseSaying.setAuthor(author);
+
+        wiseSayingRepository.save(wiseSaying);
     }
 
     public boolean delete(int deleteTarget) {
@@ -27,6 +29,7 @@ public class WiseSayingService {
     }
 
     public WiseSaying write(String content, String author) {
-        return wiseSayingRepository.save(content, author);
+        WiseSaying wiseSaying = new WiseSaying(0, content, author);
+        return wiseSayingRepository.save(wiseSaying);
     }
 }

@@ -1,6 +1,6 @@
 package com.back.domain.wiseSaying;
 
-import com.back.domain.wiseSaying.controller.SystemController;
+import com.back.domain.system.SystemController;
 import com.back.domain.wiseSaying.controller.WiseSayingController;
 
 import java.util.Scanner;

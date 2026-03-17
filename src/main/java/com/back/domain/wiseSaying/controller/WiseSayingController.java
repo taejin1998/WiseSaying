@@ -4,6 +4,7 @@ import com.back.domain.wiseSaying.Rq;
 import com.back.domain.wiseSaying.entity.WiseSaying;
 import com.back.domain.wiseSaying.service.WiseSayingService;
 
+import java.time.format.DateTimeFormatter;
 import java.util.List;
 import java.util.Scanner;
 
@@ -57,12 +58,18 @@ public class WiseSayingController {
     }
 
     public void actionList() {
-        System.out.println("번호 / 작가 / 명언");
+        System.out.println("번호 / 작가 / 명언 / 작성일 / 수정일");
         System.out.println("----------------------");
         List<WiseSaying> foundedWiseSayings = wiseSayingService.findList();
 
+        DateTimeFormatter formatter =
+                DateTimeFormatter.ofPattern("yyyy년 MM월 dd일 H시 mm분 ss초");
+
         for (WiseSaying wiseSaying : foundedWiseSayings) {
-            System.out.printf("%d / %s / %s\n", wiseSaying.getId(), wiseSaying.getAuthor(), wiseSaying.getContent());
+            System.out.printf("%d / %s / %s / %s / %s\n", wiseSaying.getId(),
+                    wiseSaying.getAuthor(), wiseSaying.getContent(),
+                    wiseSaying.getCreateDate().format(formatter),
+                    wiseSaying.getModifyDate().format(formatter));
         }
     }
 

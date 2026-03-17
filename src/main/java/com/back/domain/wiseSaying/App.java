@@ -1,5 +1,7 @@
 package com.back.domain.wiseSaying;
 
+import com.back.domain.global.AppContext;
+import com.back.domain.global.Rq;
 import com.back.domain.system.SystemController;
 import com.back.domain.wiseSaying.controller.WiseSayingController;
 
@@ -8,8 +10,8 @@ import java.util.Scanner;
 public class App {
 
     private Scanner sc = new Scanner(System.in);
-    private SystemController systemController = new SystemController();
-    private WiseSayingController wiseSayingController = new WiseSayingController();
+    private SystemController systemController = AppContext.systemController;
+    private WiseSayingController wiseSayingController = AppContext.wiseSayingController;
 
     public void run() {
 

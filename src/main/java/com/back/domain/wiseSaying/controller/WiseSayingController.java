@@ -1,6 +1,7 @@
 package com.back.domain.wiseSaying.controller;
 
-import com.back.domain.wiseSaying.Rq;
+import com.back.domain.global.AppContext;
+import com.back.domain.global.Rq;
 import com.back.domain.wiseSaying.entity.WiseSaying;
 import com.back.domain.wiseSaying.service.WiseSayingService;
 
@@ -11,9 +12,10 @@ import java.util.Scanner;
 public class WiseSayingController {
 
     private Scanner sc = new Scanner(System.in);
-    private WiseSayingService wiseSayingService = new WiseSayingService();
+    private WiseSayingService wiseSayingService = AppContext.wiseSayingService;
 
     public void actionModify(Rq rq) {
+
         int id = rq.getParamAsInt("id", -1);
 
         if (id == -1) {
